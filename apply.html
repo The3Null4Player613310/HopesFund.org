@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hope's Fund - Apply For Funds</title>
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-logo">
+        <b><img align="center" src="img/hope.png" alt="Hope" class="header-logo-image"></b>
+      </div>
+    </div>
+    <noscript>
+      <h1 align="center"><b>Please Enable JavaScript</b></h1>
+    </noscript>
+    <form onsubmit="submit()" method="post" id="form" hidden="true">
+      <table align="center" class="form">
+	<thead>
+	  <th colspan="3"><h2 align="center">Apply For Funds</h2></th>
+	</thead>
+	<tbody>
+          <tr>
+            <td><label for="first_name">First Name: </label></td>
+            <td><input type="text" id="first_name" name="FNAME" tabindex="0" autofocus="true" required="true" placeholder=" John " value=""></td>
+          </tr>
+          <tr>
+            <td><label for="last_name">Last Name: </label></td>
+            <td><input type="text" id="last_name" name="LNAME" tabindex="0" required="true" placeholder=" Doe " value=""></td>
+          </tr>
+          <tr>
+            <td><label for="phone">Phone: </label></td>
+            <td><input type="tel" id="phone" name="PHONE" tabindex="0" required="true" minlength="10" maxlength="15" placeholder=" +1 (902) 555-0101 " value=""></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email: </label></td>
+            <td><input type="email" id="email" name="EMAIL" tabindex="0" required="true" placeholder=" johndoe@example.com " value=""></td>
+          </tr>
+          <tr>
+            <td><label for="pet_name">Pet Name: </label></td>
+            <td><input type="text" id="pet_name" name="PNAME" tabindex="0" required=true placeholder=" Hope " value=""></td>
+	  </tr>
+          <tr>
+            <td><label for="Amount">Amount (CAD): $</label></td>
+            <td><input type="number" id="amount" name="TOTAL" tabindex="0" required="true" placeholder=" 1000" min="0.01" step="0.01" value="0"></td>
+	  </tr>
+          <tr><td colspan="3"><hr></td></tr>
+	  <tr>
+             <td colspan="2"><a href="index.html" tabindex="-1"><input type="button" tabindex="0" value="Cancel"></a></td>
+             <td><input type="submit" tabindex="0" value="Apply"></td>
+	  </tr>
+        </tbody>
+      </table>
+      <input type="hidden" id="suuid" name="SUUID" value="0">
+      <input type="hidden" id="etime" name="ETIME" value="0">   
+    </form>
+    <script src="js/form.js"></script>
+    <div class="footer">
+      <span>&copy; 2023</span>
+      &nbsp;&nbsp;
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </body>
+</html>
