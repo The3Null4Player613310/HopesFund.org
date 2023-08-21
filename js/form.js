@@ -64,7 +64,7 @@ function init()
 
   var suuid = epoch + rando;
   
-  i_ssuid.value = ssuid;
+  i_suuid.value = ssuid;
   i_etime.value = epoch;
 }
 
