@@ -19,6 +19,7 @@ function submit(event)
     if(!(input[i].id === ""))
     {
       data[(''+input[i].name)] = (''+input.value);
+      alert(":"+input.name+":")
     }
   }
 
