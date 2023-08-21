@@ -21,7 +21,7 @@ function submit()
   $.ajax({
     type: "POST",
     datatype: "json",
-    url: atob(domain) + "/api/database/rows/table/" + id + "/?user_field_names=true",
+    url: "https://" + atob(domain) + "/api/database/rows/table/" + id + "/?user_field_names=true",
     headers: { "authorization":"Token " + atob(token),
                "content-type":"application/json" },
     data: JSON.stringify(data),
