@@ -7,8 +7,39 @@ function unhide()
   form.removeAttribute("hidden");
 }
 
+
+function submit(event)
+{
+  var form = document.getElementById("form");
+  var input = form.getElementsByTagName("input");
+  var data = {};
+  
+  for(var i=0; i<input.length; i++)
+  {
+    if(!(input[i].id === ""))
+    {
+      data[input[i].name] = input.value;
+    }
+  }
+
+  document.cookie = "FNAME='"+data["FNAME"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "LNAME='"+data["LNAME"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "PHONE='"+data["PHONE"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "EMAIL='"+data["EMAIL"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "PNAME='"+data["PNAME"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "TOTAL='"+data["TOTAL"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "SUUID='"+data["SUUID"]+"'; path=/; max-age=8; samesite=strict";
+  document.cookie = "ETIME='"+data["ETIME"]+"'; path=/; max-age=8; samesite=strict";
+
+  e.preventDefault();
+}
+
 function init()
 {
+  var form = document.getElementById("form");
+  
+  form.addEventListener("submit", submit)
+  
   var i_suuid = document.getElementById("suuid");
   var i_etime = document.getElementById("etime");
 
@@ -35,32 +66,6 @@ function init()
   
   i_ssuid.value = ssuid;
   i_etime.value = epoch;
-}
-
-function submit(event)
-{
-  var form = document.getElementById("form");
-  var input = form.getElementsByTagName("input");
-  var data = {};
-  
-  for(var i=0; i<input.length; i++)
-  {
-    if(!(input[i].id === ""))
-    {
-      data[input[i].name] = input.value;
-    }
-  }
-
-  document.cookie = "FNAME='"+data["FNAME"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "LNAME='"+data["LNAME"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "PHONE='"+data["PHONE"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "EMAIL='"+data["EMAIL"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "PNAME='"+data["PNAME"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "TOTAL='"+data["TOTAL"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "SUUID='"+data["SUUID"]+"'; path=/; max-age=8; samesite=strict";
-  document.cookie = "ETIME='"+data["ETIME"]+"'; path=/; max-age=8; samesite=strict";
-
-  e.preventDefault();
 }
 
 unhide();
