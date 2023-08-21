@@ -18,6 +18,8 @@ function submit()
     {
       data[k] = v.substring(1, v.length-1);
     }
+
+    document.cookie = "" + k + "=; path=/; max-age=1; samesite=strict";
   }
 
   function s()
@@ -33,6 +35,7 @@ function submit()
     data: JSON.stringify(data),
     success: s
   });
+
 }
 
 submit();
