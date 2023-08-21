@@ -37,7 +37,7 @@ function init()
   i_etime.value = epoch;
 }
 
-function submit()
+function submit(event)
 {
   var form = document.getElementById("form");
   var input = form.getElementsByTagName("input");
@@ -60,7 +60,7 @@ function submit()
   document.cookie = "SUUID='"+data["SUUID"]+"'; path=/; max-age=8; samesite=strict";
   document.cookie = "ETIME='"+data["ETIME"]+"'; path=/; max-age=8; samesite=strict";
 
-  return false;
+  e.preventDefault();
 }
 
 unhide();
