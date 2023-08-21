@@ -10,7 +10,14 @@ function submit()
   for(var i=0; i<c.length; i++)
   {
     kv = c[i].split("=");
-    data[kv[0]] = kv[1];  
+    data[kv[0]] = kv[1];
+
+    k = kv[0];
+    v = data[k];
+    if(( v[0] === "'" ) && ( v[v.length-1] === "'" ))
+    {
+      data[k] = v.substring(1, v.length-1);
+    }
   }
 
   function s()
