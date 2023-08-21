@@ -32,6 +32,7 @@ function submit(event)
   document.cookie = "SUUID='"+data["SUUID"]+"'; path=/; max-age=8; samesite=strict";
   document.cookie = "ETIME='"+data["ETIME"]+"'; path=/; max-age=8; samesite=strict";
 
+  window.location.replace("submit.html");
   event.preventDefault();
 }
 
