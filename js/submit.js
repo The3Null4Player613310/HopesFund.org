@@ -1,6 +1,6 @@
-const domain="";
-const token="";
-const id="";
+const domain="YXBpLmJhc2Vyb3cuaW8=";
+const token="ZXBWbXFIdGwycXhnQWhiSEpUN3JaS0REa0JDSUhzQ2k=";
+const id="190059";
 
 function submit()
 {
@@ -13,19 +13,20 @@ function submit()
     data[kv[0]] = kv[1];  
   }
 
-  alert(JSON.stringify(data));
+  function s()
+  {
+    alert("SUCESS");
+  };
 
-  function s(){};
-
-  //$.ajax({
-  //  type: "PATCH",
-  //  datatype: "json",
-  //  url: atob(domain) + "database/rows/table" + id + "/" + sid + "/?user_field_names=true",
-  //  headers: { "authorization":"Token " + atob(token),
-  //             "content-type":"application/json" },
-  //  data JSON.stringify(data),
-  //  success: s
-  //});
+  $.ajax({
+    type: "POST",
+    datatype: "json",
+    url: atob(domain) + "/api/database/rows/table/" + id + "/?user_field_names=true",
+    headers: { "authorization":"Token " + atob(token),
+               "content-type":"application/json" },
+    data JSON.stringify(data),
+    success: s
+  });
 }
 
 submit();
