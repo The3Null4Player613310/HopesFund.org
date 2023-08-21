@@ -22,7 +22,6 @@ function submit()
 
   function s()
   {
-    alert("SUCESS");
   };
 
   $.ajax({
