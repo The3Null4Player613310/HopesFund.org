@@ -24,7 +24,7 @@ function submit()
     url: atob(domain) + "/api/database/rows/table/" + id + "/?user_field_names=true",
     headers: { "authorization":"Token " + atob(token),
                "content-type":"application/json" },
-    data JSON.stringify(data),
+    data: JSON.stringify(data),
     success: s
   });
 }
